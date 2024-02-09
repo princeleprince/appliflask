@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Acceuil</title>
+	<link rel="stylesheet" href="{{url_for('static',filename='Style/acceui.css')}}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+<!-- navbar-->
+	<header>
+		<!--logo-->
+		<a href="a" class="logo"><i class='bx bxs-shopping-bags' >sac</i></a>
+		<!--menu icon -->
+		<i class='bx bx-menu'id="menu-icon" ></i>
+		<!--menu icon -->
+		<ul class="navbar">
+			<li><a id="v" href="#home">Acceuil</a></li>
+			<li><a href="#about">A propos de nous</a></li>
+			<li><a href="#product">Produits</a></li>
+			
+		</ul>
+	
+		<!-- icons-->
+		<div class="header-icon">
+			
+			<i class='bx bx-cart-alt' ><span>0</span></i>
+		</div>
+
+		
+		</header>
+
+		<!-- home-->
+		<section class=" home" id="home">
+			<div class="home-text">
+				
+				<h1>sac <span>Votre</span><br><span>meilleur</span>choix</h1>
+				<p>decouvrez notre galerie de sacs</p>
+				<a href="#product" class="btn">Acheter</a>
+			</div>
+
+			<!-- home-image-->
+			<div class="home-img">
+				<img src="static/Images/sacs/grand/sacFemme/sacCur/0.png" alt="">
+			</div>
+		</section>
+
+		<!-- about-->
+		<section class=" about" id="about">
+			<div class="about-img">
+				<img src="static/Images/sacs/grand/sacFemme/sacCur/6.jpeg" alt="">
+			</div>
+			<div class="about-text">
+				<h2>A propos de nous </h2>
+				<p>Sac est un un site de vente de sac </p>
+				<p>Nos sac sont d'exelente quailité</p>
+				
+				
+			</div>
+		
+		</section>
+
+		<!-- products-->
+		<section class="product" id="product">
+			<div class="heading">
+				<h2>Nos Produits</h2>
+			</div>
+			<br>
+			<!-- filter-->
+			<form id="filterForm">
+  
+    			
+			
+    				<label for="genderFilter">Filtrer par :</label>
+    				<select id="genderFilter" onchange="updateFilter()">
+      					<option value="tous">Tous</option>
+      					<option value="homme">Homme</option>
+      					<option value="femme">Femme </option>
+      					<option value="enfant">Enfant</option>
+      				</select>
+     			
+
+     			
+    
+    				<label for="nameFilter">Recherche :</label>
+   					 <input type="text" id="nameFilter" oninput="updateFilter()" placeholder="Nom du produit">
+  					
+
+  			</form>
+
+			<!-- products-container-->
+			<div class="product-container">
+
+				{% for liste_produits in liste_produits %}
+
+				<div class="box" data-gender="{{ liste_produits.gender }}" data-name="{{ liste_produits.name }}">
+
+					<img src="{{url_for('static',filename='Images/'+ liste_produits.image)}}" alt="">
+					<h2>{{ liste_produits.name }}</h2>
+					<span>{{ liste_produits.prix }} f</span>
+
+					<i class='bx bxs-cart-add' onclick="ajouterAuPanier('{{ liste_produits.name }}', {{ liste_produits.prix }})"></i>
+					
+					
+					
+
+				</div>
+				
+				
+
+				{% endfor %}
+			</div>
+		</section>
+
+		<!-- customer-->
+		<section class="customers" id="customers">
+			
+		</section>
+		<!-- footer-->
+		<section class="footer">
+			<div class="footer-box">
+				<a href="a" class="logo"><i class='bx bxs-shopping-bags' >sac</i></a>
+				<p>Nous suivre sur nos pages</p>
+			
+			<div class="social">
+				<a href="#"><i class='bx bxl-facebook' ></i></a>
+				<a href="#"><i class='bx bxl-twiter' ></i></a>
+				<a href="#"><i class='bx bxl-instagram' ></i></a>
+				<a href="#"><i class='bx bxl-youtube' ></i></a>
+			</div>
+			</div>
+			<div class="footer-box">
+				<h3>Support</h3>
+				<li><a href="#">Produits</a></li>
+				<li><a href="#">Aide</a></li>
+				<li><a href="#">Police</a></li>
+				<li><a href="#">Termes d'utlisation</a></li>
+			</div>
+			<div class="footer-box">
+				<h3>Support</h3>
+				<li><a href="#">Produits</a></li>
+				<li><a href="#">Aide</a></li>
+				<li><a href="#">Police</a></li>
+				<li><a href="#">Termes d'utlisation</a></li>
+			</div>
+			
+			<div class="footer-box contact">
+				<h3>Support</h3>
+				<span><i class='bx bxs-map' ></i>togo-lome-adewi-edaoba</span>
+				<span><i class='bx bxs-phone' ></i>228 90 58 85 99 - 228 96 09 48 47 </span>
+				<span><i class='bx bxs-envelope-open' ></i>sactogo@gmail.com</span>
+			</div>
+		</section>
+
+		<!-- lien fichier script-->
+	<script src="{{url_for('static',filename='Js/acceui.js')}}"></script>
+
+		
+</body>
+</html>

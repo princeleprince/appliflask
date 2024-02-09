@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier le Produit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style/produit.html.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Modifier le Produit</h2>
+    
+    <form method="post" action="">
+        {{ form.hidden_tag() }}
+        <label for="nom_produit">Nom du Produit :</label>
+        {{ form.nom_produit(size=50) }}<br>
+
+        <label for="description">Description :</label>
+        {{ form.description(rows=5) }}<br>
+
+        <label for="prix">Prix :</label>
+        {{ form.prix }}<br>
+
+        <input type="submit" value="OK">
+    </form>
+</div>
+
+</body>
+</html>
+

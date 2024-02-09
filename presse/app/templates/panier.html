@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Acceuil</title>
+	<link rel="stylesheet" href="{{url_for('static',filename='Style/acceui.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='Style/panier.css') }}">
+</head>
+<body>
+<!-- navbar-->
+	<header>
+		<!--logo-->
+		<a href="a" class="logo"><i class='bx bx-cart-alt' >Panier</i></a>
+		<!--menu icon -->
+		<i class='bx bx-menu'id="menu-icon" ></i>
+		<!--menu icon -->
+		<ul class="navbar">
+			<li><a id="v" href="acceui">Acceuil</a></li>
+			<li><a id="v" href="connect">Commander</a></li>
+			
+		</ul>
+	
+		<!-- icons-->
+		<div class="header-icon">
+			
+			
+		</div>
+
+		
+		</header>
+
+		<!-- home-->
+		<section class=" home" id="home">
+
+            <div id="panier-container">
+
+            </div>
+            <div id="infos-panier" class="container">
+                
+            </div>  
+            <div id="occurrencesProduit">
+                
+            </div>
+			
+		</section>
+
+		
+
+	</section>
+	<!-- footer-->
+	<section class="footer">
+		<div class="footer-box">
+			<a href="a" class="logo"><i class='bx bxs-shopping-bags' >sac</i></a>
+			<p>Nous suivre sur nos pages</p>
+		
+		<div class="social">
+			<a href="#"><i class='bx bxl-facebook' ></i></a>
+			<a href="#"><i class='bx bxl-twiter' ></i></a>
+			<a href="#"><i class='bx bxl-instagram' ></i></a>
+			<a href="#"><i class='bx bxl-youtube' ></i></a>
+		</div>
+		</div>
+		<div class="footer-box">
+			<h3>Support</h3>
+			<li><a href="#">Produits</a></li>
+			<li><a href="#">Aide</a></li>
+			<li><a href="#">Police</a></li>
+			<li><a href="#">Termes d'utlisation</a></li>
+		</div>
+		<div class="footer-box">
+			<h3>Support</h3>
+			<li><a href="#">Produits</a></li>
+			<li><a href="#">Aide</a></li>
+			<li><a href="#">Police</a></li>
+			<li><a href="#">Termes d'utlisation</a></li>
+		</div>
+		
+		<div class="footer-box contact">
+			<h3>Support</h3>
+			<span><i class='bx bxs-map' ></i>togo-lome-adewi-edaoba</span>
+			<span><i class='bx bxs-phone' ></i>228 90 58 85 99 - 228 96 09 48 47 </span>
+			<span><i class='bx bxs-envelope-open' ></i>sactogo@gmail.com</span>
+		</div>
+	</section>
+
+		
+        <script src="{{url_for('static',filename='Js/panier.js')}}"></script>
+
+
+		
+</body>
+</html>

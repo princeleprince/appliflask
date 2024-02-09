@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Produits</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style/gesuti.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Liste des Utilisateurs</h2>
+
+
+        
+    
+       {% for liste_users in liste_users %}
+
+            
+
+       <div class="box">
+                   
+                    <p><strong>ID:</strong> <span>{{ liste_users.id }}</span></p>
+                    <p><strong>Nom:</strong> <span>{{ liste_users.name }}</span></p>
+                   
+                        
+                        
+                        <button class="button button-delete" onclick="supprimerUser({{ liste_users.id }})">Supprimer</button>
+                    <hr>
+                    <br>
+                    
+                </div>
+            {% endfor %}
+</div>
+
+
+<script src="{{url_for('static',filename='Js/gesuti.js')}}"></script>
+
+
+</body>
+</html>
+

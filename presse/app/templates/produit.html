@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un produit</title>
+     <link rel="stylesheet" href="{{url_for('static',filename='Style/produit.css')}}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Ajouter un produit</h2>
+    <form method="POST" action="{{ url_for('ajouter_produit') }} "enctype="multipart/form-data" 
+>
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+            <label for="{{ form.gender.id }}">Genre du produit:</label>
+            {{ form.gender(class="form-control", placeholder="Entrez le genre") }}
+            {% for error in form.gender.errors %}
+                <p class="text-danger">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.name.id }}">Nom du produit:</label>
+            {{ form.name(class="form-control", placeholder="Entrez le nom du produit") }}
+            {% for error in form.name.errors %}
+                <p class="text-danger">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.image.id }}">Image:</label>
+            {{ form.image(class="form-control", placeholder="Entrez le nom du produit") }}
+            {% for error in form.image.errors %}
+                <p class="text-danger">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.details.id }}">Description du produit:</label>
+            {{ form.details(class="form-control", placeholder="Entrez la description du produit") }}
+            {% for error in form.details.errors %}
+                <p class="text-danger">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.prix.id }}">Prix du produit:</label>
+            {{ form.prix(class="form-control", placeholder="Entrez le prix du produit") }}
+            {% for error in form.prix.errors %}
+                <p class="text-danger">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ajouter le produit</button>
+    </form>
+</div>
+
+</body>
+</html>

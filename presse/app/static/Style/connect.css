@@ -1,0 +1,39 @@
+.buttona {
+    display: flex;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #4caae9;
+    background-color:#4caae9;
+
+}
+
+.buttonb {
+    display: flex;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #4caae9;
+    background-color:#4caae9;
+}
+.a{
+    margin-top: 300px;
+    margin-left:689px ;
+}
+

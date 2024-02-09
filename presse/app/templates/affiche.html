@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Produits</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style/affiche.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Liste des Produits</h2>
+
+        <form id="filterForm">
+
+                <label for="genderFilter">Filtrer par Genre:</label>
+                <select id="genderFilter" onchange="updateFilter()">
+                     <option value="tous">Tous</option>
+                     <option value="homme">Homme</option>
+                     <option value="femme">Femme</option>
+                     <option value="enfant">Enfant</option>
+                </select>
+
+                <label for="nameFilter">Filtrer par Nom:</label>
+                <input type="text" id="nameFilter" oninput="updateFilter()" placeholder="Nom du produit">
+
+            </form>
+    
+       {% for liste_produits in liste_produits %}
+
+            
+
+                <div class="box" data-gender="{{ liste_produits.gender }}" data-name="{{ liste_produits.name }}">
+                   
+                    <p><strong>ID:</strong> <span>{{ liste_produits.id }}</span></p>
+                    <p><strong>Genre:</strong> <span>{{ liste_produits.gender }}</span></p>
+                    <p><strong>Nom:</strong> <span>{{ liste_produits.name }}</span></p>
+                    <p><strong>Image:</strong> <span><img src="{{url_for('static',filename='Images/'+ liste_produits.image)}}"></span></p>
+                    <p><strong>Commentaire:</strong> <span>{{ liste_produits.details }}</span></p>
+                    <p><strong>Prix:</strong> <span>{{ liste_produits.prix }}</span></p>
+
+                        
+                        <button class="button button-modify" onclick="modifierProduit({{ liste_produits.id }})">Modifier</button>
+                        <button class="button button-delete" onclick="supprimerProduit({{ liste_produits.id }})">Supprimer</button>
+                    <hr>
+                    <br>
+                    
+                </div>
+            {% endfor %}
+</div>
+
+
+<script src="{{url_for('static',filename='Js/affiche.js')}}"></script>
+
+
+</body>
+</html>
